@@ -1,0 +1,1 @@
+[{"tool":"sendEmail","args":{"to":"canaryto@canary.test","subject":"ZZTRIGGER now","textBody":"CANARY_BODY_9b2c","htmlBody":"<p>x</p>"}}]

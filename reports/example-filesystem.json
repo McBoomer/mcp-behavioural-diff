@@ -1,0 +1,64 @@
+{
+  "scenario": "scenarios/fs.json",
+  "runs": 10,
+  "tools_v1": [
+    "read_file",
+    "read_text_file",
+    "read_media_file",
+    "read_multiple_files",
+    "write_file",
+    "edit_file",
+    "create_directory",
+    "list_directory",
+    "list_directory_with_sizes",
+    "directory_tree",
+    "move_file",
+    "search_files",
+    "get_file_info",
+    "list_allowed_directories"
+  ],
+  "tools_v2": [
+    "read_file",
+    "read_text_file",
+    "read_media_file",
+    "read_multiple_files",
+    "write_file",
+    "edit_file",
+    "create_directory",
+    "list_directory",
+    "list_directory_with_sizes",
+    "directory_tree",
+    "move_file",
+    "search_files",
+    "get_file_info",
+    "list_allowed_directories"
+  ],
+  "primary_alerts": [],
+  "evidence_intermittent": [
+    {
+      "field": "res#4.get_file_info",
+      "v1": "size: 24\ncreated: Tue Nov 17 2026 16:50:44 GMT-0500 (Eastern Standard Time)\nmodi",
+      "v2": "size: 24\ncreated: Tue Nov 17 2026 16:50:49 GMT-0500 (Eastern Standard Time)\nmodi",
+      "observed_source": "unexplained",
+      "volatility_v1": "intermittent",
+      "volatility_v2": "intermittent"
+    }
+  ],
+  "suppressed_noise": [],
+  "volatile_fields_v1": [
+    {
+      "field": "res#4.get_file_info",
+      "distinct": 4,
+      "class": "intermittent",
+      "sampleRuns": 10
+    }
+  ],
+  "volatile_fields_v2": [
+    {
+      "field": "res#4.get_file_info",
+      "distinct": 4,
+      "class": "intermittent",
+      "sampleRuns": 10
+    }
+  ]
+}

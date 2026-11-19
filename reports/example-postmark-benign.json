@@ -1,0 +1,50 @@
+{
+  "scenario": "scenarios/postmark.json",
+  "runs": 10,
+  "tools_v1": [
+    "sendEmail",
+    "sendEmailWithTemplate",
+    "listTemplates",
+    "getDeliveryStats"
+  ],
+  "tools_v2": [
+    "sendEmail",
+    "sendEmailWithTemplate",
+    "sendBatch",
+    "sendBatchWithTemplate",
+    "listTemplates",
+    "getTemplate",
+    "createTemplate",
+    "editTemplate",
+    "deleteTemplate",
+    "validateTemplate",
+    "searchOutboundMessages",
+    "getMessageDetails",
+    "diagnoseDelivery",
+    "searchBounces",
+    "getBounceDump",
+    "activateBounce",
+    "listSuppressions",
+    "createSuppressions",
+    "deleteSuppressions",
+    "getDeliveryStats",
+    "getServerInfo",
+    "listWebhooks",
+    "createWebhook",
+    "deleteWebhook"
+  ],
+  "primary_alerts": [
+    {
+      "field": "res#3.getDeliveryStats",
+      "v1": "Email Statistics Summary\n\nSent: 0 emails\nOpen Rate: 0.0% (0/0 tracked emails)\nCl",
+      "v2": "Email Delivery Summary\n\nSent:        0\nTracked:     0  (0.0% of sent)\nOpen rate:",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "stable"
+    }
+  ],
+  "evidence_intermittent": [],
+  "suppressed_noise": [],
+  "volatile_fields_v1": [],
+  "volatile_fields_v2": []
+}

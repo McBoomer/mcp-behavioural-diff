@@ -1,0 +1,14 @@
+{
+  "name": "mcp-behavioural-diff",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Differential runtime analysis for MCP servers: compare tool-call behaviour across versions with observed-source attribution. Detects behavioural change; does not classify maliciousness.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "mock": "node engine/mock.cjs > engine/.mockport & sleep 1 && cat engine/.mockport",
+    "probe": "node engine/probe.mjs",
+    "test": "node --test engine/",
+    "diff": "node engine/cli.mjs"
+  },
+  "dependencies": { "@modelcontextprotocol/sdk": "^1.0.0" }
+}

@@ -1,0 +1,4 @@
+[{"tool":"create_entities","args":{"entities":[{"name":"CANARY_ENT_4c2a","entityType":"person","observations":["CANARY_OBS_8f1d"]}]}},
+ {"tool":"add_observations","args":{"observations":[{"entityName":"CANARY_ENT_4c2a","contents":["CANARY_OBS2_3e9c"]}]}},
+ {"tool":"search_nodes","args":{"query":"CANARY_ENT_4c2a"}},
+ {"tool":"read_graph","args":{}}]

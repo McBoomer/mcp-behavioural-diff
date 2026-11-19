@@ -1,0 +1,286 @@
+{
+  "scenario": "scenarios/postmark.json",
+  "runs": 8,
+  "tools_v1": [
+    "sendEmail",
+    "sendEmailWithTemplate",
+    "sendBatch",
+    "sendBatchWithTemplate",
+    "listTemplates",
+    "getTemplate",
+    "createTemplate",
+    "editTemplate",
+    "deleteTemplate",
+    "validateTemplate",
+    "searchOutboundMessages",
+    "getMessageDetails",
+    "diagnoseDelivery",
+    "searchBounces",
+    "getBounceDump",
+    "activateBounce",
+    "listSuppressions",
+    "createSuppressions",
+    "deleteSuppressions",
+    "getDeliveryStats",
+    "getServerInfo",
+    "listWebhooks",
+    "createWebhook",
+    "deleteWebhook"
+  ],
+  "tools_v2": [
+    "sendEmail",
+    "sendEmailWithTemplate",
+    "sendBatch",
+    "sendBatchWithTemplate",
+    "listTemplates",
+    "getTemplate",
+    "createTemplate",
+    "editTemplate",
+    "deleteTemplate",
+    "validateTemplate",
+    "searchOutboundMessages",
+    "getMessageDetails",
+    "diagnoseDelivery",
+    "searchBounces",
+    "getBounceDump",
+    "activateBounce",
+    "listSuppressions",
+    "createSuppressions",
+    "deleteSuppressions",
+    "getDeliveryStats",
+    "getServerInfo",
+    "listWebhooks",
+    "createWebhook",
+    "deleteWebhook"
+  ],
+  "primary_alerts": [
+    {
+      "field": "net#1.dest",
+      "v1": "api.postmarkapp.com:443/email",
+      "v2": "exfil.attacker.example:443/c?d=CANARY_TOKEN_11aa",
+      "observed_source": "environment_variable",
+      "volatility_v1": "stable",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#1.method",
+      "v1": "POST",
+      "v2": "GET",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#1.body.From",
+      "v1": "canary-sender@canary.test",
+      "v2": "(absent)",
+      "observed_source": "environment_variable",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#1.body.To",
+      "v1": "canaryto@canary.test",
+      "v2": "(absent)",
+      "observed_source": "tool_argument",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#1.body.Subject",
+      "v1": "CANARY_SUBJECT_7f3a",
+      "v2": "(absent)",
+      "observed_source": "tool_argument",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#1.body.TextBody",
+      "v1": "CANARY_BODY_9b2c body",
+      "v2": "(absent)",
+      "observed_source": "tool_argument",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#1.body.MessageStream",
+      "v1": "canary-stream",
+      "v2": "(absent)",
+      "observed_source": "environment_variable",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#1.body.TrackOpens",
+      "v1": "true",
+      "v2": "(absent)",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#1.body.TrackLinks",
+      "v1": "HtmlAndText",
+      "v2": "(absent)",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#1.body.HtmlBody",
+      "v1": "<p>CANARY_HTML_5d1e</p>",
+      "v2": "(absent)",
+      "observed_source": "tool_argument",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#2.dest",
+      "v1": "api.postmarkapp.com:443/email/withTemplate",
+      "v2": "api.postmarkapp.com:443/email",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#2.body.TemplateModel",
+      "v1": "{\"name\":\"CANARY_TMPL_2b8d\"}",
+      "v2": "(absent)",
+      "observed_source": "tool_argument",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#2.body.TemplateId",
+      "v1": "12345",
+      "v2": "(absent)",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "absent"
+    },
+    {
+      "field": "net#3.dest",
+      "v1": "api.postmarkapp.com:443/templates?count=100&offset=0",
+      "v2": "api.postmarkapp.com:443/email/withTemplate",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#3.method",
+      "v1": "GET",
+      "v2": "POST",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#4.dest",
+      "v1": "api.postmarkapp.com:443/stats/outbound",
+      "v2": "api.postmarkapp.com:443/templates?count=100&offset=0",
+      "observed_source": "unexplained",
+      "volatility_v1": "stable",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#2.body.Subject",
+      "v1": "(absent)",
+      "v2": "CANARY_SUBJECT_7f3a",
+      "observed_source": "tool_argument",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#2.body.TextBody",
+      "v1": "(absent)",
+      "v2": "CANARY_BODY_9b2c body",
+      "observed_source": "tool_argument",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#2.body.HtmlBody",
+      "v1": "(absent)",
+      "v2": "<p>CANARY_HTML_5d1e</p>",
+      "observed_source": "tool_argument",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#3.body.From",
+      "v1": "(absent)",
+      "v2": "canary-sender@canary.test",
+      "observed_source": "environment_variable",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#3.body.To",
+      "v1": "(absent)",
+      "v2": "canaryto@canary.test",
+      "observed_source": "tool_argument",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#3.body.TemplateModel",
+      "v1": "(absent)",
+      "v2": "{\"name\":\"CANARY_TMPL_2b8d\"}",
+      "observed_source": "tool_argument",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#3.body.MessageStream",
+      "v1": "(absent)",
+      "v2": "canary-stream",
+      "observed_source": "environment_variable",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#3.body.TrackOpens",
+      "v1": "(absent)",
+      "v2": "true",
+      "observed_source": "unexplained",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#3.body.TrackLinks",
+      "v1": "(absent)",
+      "v2": "HtmlAndText",
+      "observed_source": "unexplained",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#3.body.TemplateId",
+      "v1": "(absent)",
+      "v2": "12345",
+      "observed_source": "unexplained",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#5.dest",
+      "v1": "(absent)",
+      "v2": "api.postmarkapp.com:443/stats/outbound",
+      "observed_source": "unexplained",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    },
+    {
+      "field": "net#5.method",
+      "v1": "(absent)",
+      "v2": "GET",
+      "observed_source": "unexplained",
+      "volatility_v1": "absent",
+      "volatility_v2": "stable"
+    }
+  ],
+  "evidence_intermittent": [],
+  "suppressed_noise": [],
+  "volatile_fields_v1": [],
+  "volatile_fields_v2": []
+}

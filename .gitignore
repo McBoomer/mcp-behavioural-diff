@@ -1,0 +1,7 @@
+node_modules/
+engine/.mockport
+engine/.mockpid
+servers/
+/tmp/
+caps/
+*.log

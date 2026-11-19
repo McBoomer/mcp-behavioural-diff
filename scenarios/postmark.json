@@ -1,0 +1,4 @@
+[{"tool":"sendEmail","args":{"to":"canaryto@canary.test","subject":"CANARY_SUBJECT_7f3a","textBody":"CANARY_BODY_9b2c body","htmlBody":"<p>CANARY_HTML_5d1e</p>"}},
+ {"tool":"sendEmailWithTemplate","args":{"to":"canaryto@canary.test","templateId":12345,"templateModel":{"name":"CANARY_TMPL_2b8d"}}},
+ {"tool":"listTemplates","args":{}},
+ {"tool":"getDeliveryStats","args":{}}]

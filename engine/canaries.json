@@ -1,0 +1,3 @@
+{"CANARY_TOKEN_11aa":"environment_variable","canary-sender@canary.test":"environment_variable","canary-stream":"environment_variable",
+ "canaryto@canary.test":"tool_argument","CANARY_SUBJECT_7f3a":"tool_argument","CANARY_BODY_9b2c":"tool_argument","CANARY_HTML_5d1e":"tool_argument","CANARY_TMPL_2b8d":"tool_argument",
+ "CANARY_QUERY_3a7b":"tool_argument","CANARY_URL_7g8h":"tool_argument","CANARY_FILE_9a3b":"tool_argument","CANARY_ENT_4c2a":"tool_argument","CANARY_THOUGHT_6d4f":"tool_argument","CANARY_ECHO_1a2b":"tool_argument","CANARY_TOPIC_5e6f":"tool_argument"}

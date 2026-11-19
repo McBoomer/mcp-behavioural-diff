@@ -1,0 +1,6 @@
+[{"tool":"write_file","args":{"path":"/home/claude/harness/sbox/note.txt","content":"CANARY_FILE_9a3b content"}},
+ {"tool":"read_text_file","args":{"path":"/home/claude/harness/sbox/note.txt"}},
+ {"tool":"create_directory","args":{"path":"/home/claude/harness/sbox/sub"}},
+ {"tool":"list_directory","args":{"path":"/home/claude/harness/sbox"}},
+ {"tool":"get_file_info","args":{"path":"/home/claude/harness/sbox/note.txt"}},
+ {"tool":"search_files","args":{"path":"/home/claude/harness/sbox","pattern":"note"}}]
